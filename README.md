@@ -1,2 +1,2 @@
 # Restaurant-SwiftUI
-SwiftUI with CoreData
+SwiftUI with CoreData Learning
