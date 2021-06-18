@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D8F7A87267C60D800DFDF5C /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F7A83267C60D800DFDF5C /* Restaurant+CoreDataClass.swift */; };
-		5D8F7A88267C60D800DFDF5C /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F7A84267C60D800DFDF5C /* Restaurant+CoreDataProperties.swift */; };
-		5D8F7A89267C60D800DFDF5C /* Review+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F7A85267C60D800DFDF5C /* Review+CoreDataClass.swift */; };
-		5D8F7A8A267C60D800DFDF5C /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F7A86267C60D800DFDF5C /* Review+CoreDataProperties.swift */; };
+		5D350847267C76240057174D /* Review+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D350843267C76240057174D /* Review+CoreDataClass.swift */; };
+		5D350848267C76240057174D /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D350844267C76240057174D /* Restaurant+CoreDataProperties.swift */; };
+		5D350849267C76240057174D /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D350845267C76240057174D /* Restaurant+CoreDataClass.swift */; };
+		5D35084A267C76240057174D /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D350846267C76240057174D /* Review+CoreDataProperties.swift */; };
 		C8CBC0B1267BA99100ADCA06 /* DatePickerWithButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CBC0B0267BA99100ADCA06 /* DatePickerWithButtons.swift */; };
 		C8CBC0B6267BAC7F00ADCA06 /* ReviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CBC0B5267BAC7F00ADCA06 /* ReviewCellView.swift */; };
 		C8CBC0BB267BC4AF00ADCA06 /* AddReviewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CBC0BA267BC4AF00ADCA06 /* AddReviewTest.swift */; };
@@ -52,10 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D8F7A83267C60D800DFDF5C /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Restaurant+CoreDataClass.swift"; path = "Restaurant/Model/Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5D8F7A84267C60D800DFDF5C /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Restaurant+CoreDataProperties.swift"; path = "Restaurant/Model/Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5D8F7A85267C60D800DFDF5C /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Review+CoreDataClass.swift"; path = "Restaurant/Model/Review+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5D8F7A86267C60D800DFDF5C /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Review+CoreDataProperties.swift"; path = "Restaurant/Model/Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5D350843267C76240057174D /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5D350844267C76240057174D /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5D350845267C76240057174D /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5D350846267C76240057174D /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8CBC0B0267BA99100ADCA06 /* DatePickerWithButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithButtons.swift; sourceTree = "<group>"; };
 		C8CBC0B5267BAC7F00ADCA06 /* ReviewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCellView.swift; sourceTree = "<group>"; };
 		C8CBC0BA267BC4AF00ADCA06 /* AddReviewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewTest.swift; sourceTree = "<group>"; };
@@ -110,6 +110,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D350842267C76240057174D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D350843267C76240057174D /* Review+CoreDataClass.swift */,
+				5D350844267C76240057174D /* Restaurant+CoreDataProperties.swift */,
+				5D350845267C76240057174D /* Restaurant+CoreDataClass.swift */,
+				5D350846267C76240057174D /* Review+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C8D5128D267B30260067977D /* Review */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,10 +150,6 @@
 		C8EBD087267A61B10005E08A = {
 			isa = PBXGroup;
 			children = (
-				5D8F7A83267C60D800DFDF5C /* Restaurant+CoreDataClass.swift */,
-				5D8F7A84267C60D800DFDF5C /* Restaurant+CoreDataProperties.swift */,
-				5D8F7A85267C60D800DFDF5C /* Review+CoreDataClass.swift */,
-				5D8F7A86267C60D800DFDF5C /* Review+CoreDataProperties.swift */,
 				C8EBD092267A61B10005E08A /* Restaurant */,
 				C8EBD0A9267A61B30005E08A /* RestaurantTests */,
 				C8EBD0B4267A61B30005E08A /* RestaurantUITests */,
@@ -163,6 +170,7 @@
 		C8EBD092267A61B10005E08A /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				5D350842267C76240057174D /* Model */,
 				C8EBD093267A61B10005E08A /* RestaurantApp.swift */,
 				C8EBD136267AF5620005E08A /* Restaurant */,
 				C8EBD13A267AF5770005E08A /* AddRestaurant */,
@@ -375,20 +383,20 @@
 				C8EBD0A0267A61B30005E08A /* Restaurant.xcdatamodeld in Sources */,
 				C8EBD09D267A61B30005E08A /* Persistence.swift in Sources */,
 				C8EBD096267A61B10005E08A /* RestaurantView.swift in Sources */,
-				5D8F7A8A267C60D800DFDF5C /* Review+CoreDataProperties.swift in Sources */,
+				5D35084A267C76240057174D /* Review+CoreDataProperties.swift in Sources */,
 				C8EBD0C7267A63790005E08A /* AddRestaurantView.swift in Sources */,
-				5D8F7A89267C60D800DFDF5C /* Review+CoreDataClass.swift in Sources */,
 				C8EBD0E0267A6DA50005E08A /* CustomButton.swift in Sources */,
 				C8EBD0D1267A63A30005E08A /* AddReviewView.swift in Sources */,
-				5D8F7A88267C60D800DFDF5C /* Restaurant+CoreDataProperties.swift in Sources */,
+				5D350848267C76240057174D /* Restaurant+CoreDataProperties.swift in Sources */,
 				C8CBC0B1267BA99100ADCA06 /* DatePickerWithButtons.swift in Sources */,
 				C8CBC0B6267BAC7F00ADCA06 /* ReviewCellView.swift in Sources */,
+				5D350847267C76240057174D /* Review+CoreDataClass.swift in Sources */,
 				C8EBD0D6267A66740005E08A /* AddRestaurantViewModel.swift in Sources */,
 				C8EBD142267AFDC80005E08A /* RestaurantCellView.swift in Sources */,
 				C8D51292267B303E0067977D /* AddReviewViewModel.swift in Sources */,
 				C8EBD0DB267A676D0005E08A /* CustomPickerView.swift in Sources */,
+				5D350849267C76240057174D /* Restaurant+CoreDataClass.swift in Sources */,
 				C8EBD0CC267A63900005E08A /* ReviewView.swift in Sources */,
-				5D8F7A87267C60D800DFDF5C /* Restaurant+CoreDataClass.swift in Sources */,
 				C8EBD094267A61B10005E08A /* RestaurantApp.swift in Sources */,
 				C8EBD151267AFF5C0005E08A /* InputField.swift in Sources */,
 				C8D512A7267B79D20067977D /* Constants.swift in Sources */,
