@@ -1,25 +1,26 @@
 //
-//  RestaurantTests.swift
+//  AddReviewTest.swift
 //  RestaurantTests
 //
-//  Created by Akhilesh Pratap Singh on 16/06/21.
+//  Created by Akhilesh Pratap Singh on 17/06/21.
 //
 
 import XCTest
 @testable import Restaurant
 
-class RestaurantTests: XCTestCase {
+class AddReviewTest: XCTestCase {
 
-    var addRestaurantViewModel: AddRestaurantViewModel = AddRestaurantViewModel()
+    var addReviewViewModel: AddReviewViewModel = AddReviewViewModel()
     let store = PersistenceController.shared.container
     
     func test_add_restaurant() throws {
-        addRestaurantViewModel.viewContext = store.viewContext
-        let newItem = Restaurant(context: store.viewContext)
+        addReviewViewModel.viewContext = store.viewContext
+        let newItem = Review(context: store.viewContext)
         newItem.restaurantId = UUID()
-        newItem.name = "restaurant Name"
-        newItem.type = "restaurant Type"
-        newItem.rating = 0.0
+        newItem.reviewId = UUID()
+        newItem.review = "review Text"
+        newItem.rating = 5.0
+        newItem.date = Date()
         
         do {
             try store.viewContext.save()
@@ -28,7 +29,7 @@ class RestaurantTests: XCTestCase {
             XCTFail("\(nsError.userInfo)")
         }
     }
-
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

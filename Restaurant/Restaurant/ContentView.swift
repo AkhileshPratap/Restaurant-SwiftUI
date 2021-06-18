@@ -1,43 +1,51 @@
 //
-//  ContentView.swift
+//  RestaurantView.swift
 //  Restaurant
 //
-//  Created by AkhileshSingh on 18/06/21.
+//  Created by Akhilesh Pratap Singh on 16/06/21.
 //
 
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct RestaurantView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(entity: Restaurant.entity(), sortDescriptors: [])
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    var restaurants: FetchedResults<Restaurant>
 
+    @State var showAddRestaurantView = false
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        NavigationView {
+            List {
+                ForEach(restaurants) { restaurant in
+                    VStack(alignment: .leading) {
+                        Text("Name: \(restaurant.name ?? "Empty")").font(.headline)
+                        Text("Type: \(restaurant.type ?? "No Type") ").font(.subheadline)
+                    }.padding(8)
+                }
+                .onDelete(perform: deleteItems)
             }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
+            .listStyle(PlainListStyle())
+            .navigationTitle("Restaurants")
+            .navigationBarItems(trailing: Button(action: {
+                showAddRestaurantView = true
+            }, label: {
+                Text("Add")
+//                Image(systemName: "plus.circle").imageScale(.large)
+            }))
+            .sheet(isPresented: $showAddRestaurantView) {
+                AddRestaurantView()
             }
+            
         }
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = Restaurant(context: viewContext)
+            newItem.name = ""
 
             do {
                 try viewContext.save()
@@ -52,7 +60,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { restaurants[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -75,6 +83,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        RestaurantView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

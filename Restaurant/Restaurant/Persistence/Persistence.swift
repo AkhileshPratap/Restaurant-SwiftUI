@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  Restaurant
 //
-//  Created by AkhileshSingh on 18/06/21.
+//  Created by Akhilesh Pratap Singh on 16/06/21.
 //
 
 import CoreData
@@ -14,8 +14,32 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = Restaurant(context: viewContext)
+            newItem.restaurantId = UUID()
+            newItem.name = "new name"
+            newItem.type = "new type"
+            newItem.rating = 1.0
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        return result
+    }()
+
+    static var previewReview: PersistenceController = {
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        for _ in 0..<10 {
+            let newItem = Review(context: viewContext)
+            newItem.reviewId = UUID()
+            newItem.review = "new name"
+            newItem.date = Date()
+            newItem.rating = 1.0
         }
         do {
             try viewContext.save()

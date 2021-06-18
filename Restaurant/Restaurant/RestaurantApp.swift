@@ -2,7 +2,7 @@
 //  RestaurantApp.swift
 //  Restaurant
 //
-//  Created by AkhileshSingh on 18/06/21.
+//  Created by Akhilesh Pratap Singh on 16/06/21.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct RestaurantApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RestaurantView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
